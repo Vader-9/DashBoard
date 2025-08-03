@@ -1,0 +1,9 @@
+.Userprofile{
+    margin: 10px;
+}
+
+.Userprofile-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

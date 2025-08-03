@@ -1,0 +1,9 @@
+.Account{
+    margin: 10px;
+}
+
+.Account-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

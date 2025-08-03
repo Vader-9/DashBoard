@@ -1,0 +1,13 @@
+.Sidebar{
+    width: 212px;
+    height: 1024px;
+    border: 1px solid;
+    padding: 16px;
+}
+
+.sidebar-profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+}

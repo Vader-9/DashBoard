@@ -1,0 +1,9 @@
+.Social{
+    margin: 10px;
+}
+
+.Social-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,0 +1,9 @@
+.Coprate{
+    margin: 10px;
+}
+
+.Coprate-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

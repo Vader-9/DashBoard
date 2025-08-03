@@ -1,0 +1,9 @@
+.Blog{
+    margin: 10px;
+}
+
+.Blog-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
