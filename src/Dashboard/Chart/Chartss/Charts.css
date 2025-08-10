@@ -1,0 +1,14 @@
+.Charts{
+    padding-top: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.Charts-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 800px;
+    margin-bottom: 25px;
+}
+
