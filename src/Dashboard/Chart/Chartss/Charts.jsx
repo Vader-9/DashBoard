@@ -1,5 +1,7 @@
 import'./Charts.css'
 import Chart1 from './Chart1'
+import TotalUser from './Chart2file/TotalUser'
+import TrafficbyWebsite from './Chart2file/TrafficbyWebsite'
 
 
 function Charts(){
@@ -11,6 +13,8 @@ function Charts(){
             <p>Today</p>
            </div>
             <Chart1/>
+            <TotalUser/>
+            <TrafficbyWebsite/>
         </div>
     )
 }
