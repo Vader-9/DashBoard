@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
+//import { Bug } from 'lucide-react'
 
 function Notification() {
 
-    const [notification, setNotification] = useState(null)
+    const [notification, setNotification] = useState([])
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(true)
 
@@ -14,8 +14,9 @@ function Notification() {
 
             try {
           
-                const responces = await axios.get(' https://dashboard-backend-rv0c.onrender.com/api/notifications')
+                const responces = await axios.get('https://dashboard-backend-rv0c.onrender.com/api/notifications')
                 console.log(responces.data)
+                setNotification(responces.data)
 
         } catch (error) {
             console.error(error)
@@ -43,9 +44,12 @@ function Notification() {
         <p>no notification</p>
     }
 
+   console.log(notification)
+
     return (
         <div className="Notification">
-
+             <p>Notifications</p>
+             
         </div>
     )
 }

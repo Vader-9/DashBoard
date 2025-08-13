@@ -14,7 +14,7 @@ function TrafficbyWebsite() {
 
       try {
         const response = await axios.get(' https://dashboard-backend-rv0c.onrender.com/api/traffic')
-       // console.log(response.data.byWebsite)
+        console.log(response.data.byWebsite)
         setTraffic(response.data.byWebsite)
 
       } catch (error) {
@@ -31,36 +31,20 @@ function TrafficbyWebsite() {
   if (error) return <p>{error}</p>;
   if (!traffic) return <p>No chart data available.</p>;
 
-const trafficBySocials = traffic.website
-const trafficByPercentage = traffic.percentage 
 
-//console.log(trafficBySocials)
-//console.log(trafficByPercentage)
 
-//console.log(traffic)
 
- const trafficmap =  traffic.map((item)=> {
-  return (
-    <div>
-      <p>{item.website}</p>
-      <p>{item.percentage}</p>
-    </div>
-  )
- })
 
- //console.log(trafficmap)
-
-  //console.log(trafficmap)
+ 
 
   const series = [
     {
       name: 'Last Year',
-      data: trafficBySocials
+      data: traffic.map((item) => {
+        return item.website
+      })
     },
-    {
-      name: 'This Year',
-      data: trafficByPercentage
-    }
+  
   ];
 
   const options = {
@@ -77,7 +61,9 @@ const trafficByPercentage = traffic.percentage
     },
     xaxis: {
       // type: 'datetime',
-     // categories: labels
+      categories:  traffic.map((item) => {
+        return item.percentage
+      })
     },
     tooltip: {
       x: {

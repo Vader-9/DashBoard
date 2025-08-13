@@ -15,7 +15,7 @@ function TrafficbyDevice() {
         try {
 
             const responce = await axios.get (' https://dashboard-backend-rv0c.onrender.com/api/traffic')
-           //  console.log(responce.data.byDevice)
+             console.log(responce.data.byDevice)
             setDevice(responce.data.byDevice)
             
         } catch (error) {
@@ -29,6 +29,7 @@ function TrafficbyDevice() {
         fetchDevice()
       }, [])
 
+     
       
   if (loading) return <p>Loading chart...</p>;
   if (error) return <p>{error}</p>;
@@ -37,12 +38,12 @@ function TrafficbyDevice() {
    const series = [
     {
       name: 'Last Year',
-     // data: trafficBySocials
+      data: Device.map((items)=>{
+        return items.value
+        
+      })
     },
-    {
-      name: 'This Year',
-     // data: trafficByPercentage
-    }
+    
   ];
 
   const options = {
@@ -59,7 +60,10 @@ function TrafficbyDevice() {
     },
     xaxis: {
       // type: 'datetime',
-     // categories: labels
+      categories: Device.map((items)=>{
+        return items.device
+        
+      })
     },
     tooltip: {
       x: {
