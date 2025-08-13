@@ -13,11 +13,11 @@ function TotalUser() {
       try {
         const response = await axios.get('https://dashboard-backend-rv0c.onrender.com/api/userGraphData')
 
-        console.log(response.data)
+       // console.log(response.data)
         setUsers(response.data)
 
       } catch (error) {
-        console.error(error)
+       // console.error(error)
         setError('Failed to fetch user data');
       } finally {
         setLoading(false)
@@ -34,7 +34,7 @@ function TotalUser() {
   const thisYear = users.thisYear
   const labels = users.labels
 
-  console.log(lastYear, thisYear, labels)
+ // console.log(lastYear, thisYear, labels)
 
   const series = [
     {
