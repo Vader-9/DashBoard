@@ -48,9 +48,9 @@ const trafficByPercentage = traffic.percentage
   )
  })
 
- console.log(trafficmap)
+ //console.log(trafficmap)
 
-  console.log(trafficmap)
+  //console.log(trafficmap)
 
   const series = [
     {
