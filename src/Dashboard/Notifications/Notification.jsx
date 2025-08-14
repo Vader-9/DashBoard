@@ -34,15 +34,28 @@ function Notification() {
     }, [])
 
     if(error){
-        <p>unable to get notifications</p>
+        return <p>{error}</p>
     }
 
     if(loading){
-        <p>loading...</p>
+        return <p>Loading...</p>
     }
 
-    if(!notification){
-        <p>no notification</p>
+    const notificationData = notification.map((item, index) =>{
+                return(
+                    <div key={index} className='Notification-info' >
+                        <Bug/>
+                        <div className="bug">
+                            <p>{item.message}</p>
+                            <p>{item.time}</p>
+                        </div>
+                    </div>
+                )
+             })
+
+    if(!notificationData){
+        return <p>no notification</p>
+      
     }
 
   // console.log(notification)
@@ -53,17 +66,7 @@ function Notification() {
     return (
         <div className="Notification">
              <h3>Notifications</h3>
-             {notification.map((item, index) =>{
-                return(
-                    <div key={index} className='Notification-info' >
-                        <Bug/>
-                        <div className="bug">
-                            <p>{item.message}</p>
-                            <p>{item.time}</p>
-                        </div>
-                    </div>
-                )
-             })}
+             {notificationData}
         </div>
     )
 }
