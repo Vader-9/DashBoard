@@ -4,7 +4,7 @@ import ReactApexChart from 'react-apexcharts';
 
 function TrafficbyWebsite() {
 
-  const [traffic, setTraffic] = useState(null)
+  const [traffic, setTraffic] = useState()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
@@ -14,8 +14,9 @@ function TrafficbyWebsite() {
 
       try {
         const response = await axios.get(' https://dashboard-backend-rv0c.onrender.com/api/traffic')
-        console.log(response.data.byWebsite)
+        //console.log(response.data.byWebsite)
         setTraffic(response.data.byWebsite)
+        
 
       } catch (error) {
         console.error(error)
@@ -34,7 +35,7 @@ function TrafficbyWebsite() {
 
 
 
-
+//console.log(traffic)
  
 
   const series = [
@@ -71,7 +72,7 @@ function TrafficbyWebsite() {
       }
     }
   };
-
+ 
 
 
   return (

@@ -15,7 +15,7 @@ function TrafficbyDevice() {
         try {
 
             const responce = await axios.get (' https://dashboard-backend-rv0c.onrender.com/api/traffic')
-             console.log(responce.data.byDevice)
+            // console.log(responce.data.byDevice)
             setDevice(responce.data.byDevice)
             
         } catch (error) {

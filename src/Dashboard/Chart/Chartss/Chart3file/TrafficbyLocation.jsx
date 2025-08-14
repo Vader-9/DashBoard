@@ -2,47 +2,49 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-function TrafficbyLocation(){
+function TrafficbyLocation() {
 
 
-     const [location, setLocation] = useState(null)
-      const [error, setError] = useState(false)
-      const [loading, setLoading] = useState(true);
+  const [location, setLocation] = useState()
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(true);
 
-      useEffect(()=> {
+  useEffect(() => {
 
-        const fetchDevice = async () => {
+    const fetchDevice = async () => {
 
-        try {
+      try {
 
-            const responce = await axios.get (' https://dashboard-backend-rv0c.onrender.com/api/traffic')
-           // console.log(responce.data.byLocation)
-          //  setLocation(responce.data.byDevice)
-            
-        } catch (error) {
-            
-            setError('Failed to fetch device data');
+        const responce = await axios.get(' https://dashboard-backend-rv0c.onrender.com/api/traffic')
+       //  console.log(responce.data.byLocation)
+          setLocation(responce.data.byLocation)
 
-        } finally {
-            setLoading(false)
-        }
+          
+
+      } catch (error) {
+
+        setError('Failed to fetch device data');
+
+      } finally {
+        setLoading(false)
       }
-        fetchDevice()
-      }, [])
+    }
+    fetchDevice()
+  }, [])
 
-      
+  
   if (loading) return <p>Loading chart...</p>;
   if (error) return <p>{error}</p>;
   if (!location) return <p>No chart data available.</p>;
 
-   const series = [
+  const series = [
     {
       name: 'Last Year',
-     // data: trafficBySocials
+      // data: trafficBySocials
     },
     {
       name: 'This Year',
-     // data: trafficByPercentage
+      // data: trafficByPercentage
     }
   ];
 
@@ -60,7 +62,7 @@ function TrafficbyLocation(){
     },
     xaxis: {
       // type: 'datetime',
-     // categories: labels
+      // categories: labels
     },
     tooltip: {
       x: {
@@ -69,12 +71,12 @@ function TrafficbyLocation(){
     }
   };
 
-    return(
-        <div className="TrafficbyLocation">
-            <h2>Traffic by Location</h2>
-              <ReactApexChart options={options} series={series} type="pie" height={350} />
-        </div>
-    )
+  return (
+    <div className="TrafficbyLocation">
+      <h2>Traffic by Location</h2>
+      <ReactApexChart options={options} series={series} type="pie" height={350} />
+    </div>
+  )
 }
 
 export default TrafficbyLocation;

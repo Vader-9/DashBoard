@@ -1,6 +1,7 @@
+import './Notification.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-//import { Bug } from 'lucide-react'
+import { Bug } from 'lucide-react'
 
 function Notification() {
 
@@ -15,14 +16,14 @@ function Notification() {
             try {
           
                 const responces = await axios.get('https://dashboard-backend-rv0c.onrender.com/api/notifications')
-                console.log(responces.data)
+                //console.log(responces.data)
                 setNotification(responces.data)
 
         } catch (error) {
             console.error(error)
             setError(error)
         } finally {
-             setLoading(false)
+           //  setLoading(false)
         }
         
 
@@ -44,12 +45,25 @@ function Notification() {
         <p>no notification</p>
     }
 
-   console.log(notification)
+  // console.log(notification)
 
+  
+   
+ 
     return (
         <div className="Notification">
-             <p>Notifications</p>
-             
+             <h3>Notifications</h3>
+             {notification.map((item, index) =>{
+                return(
+                    <div key={index} className='Notification-info' >
+                        <Bug/>
+                        <div className="bug">
+                            <p>{item.message}</p>
+                            <p>{item.time}</p>
+                        </div>
+                    </div>
+                )
+             })}
         </div>
     )
 }

@@ -1,0 +1,15 @@
+.Notification{
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+.Notification h3{
+    margin-bottom: 20px;
+}
+
+
+.Notification-info{
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
