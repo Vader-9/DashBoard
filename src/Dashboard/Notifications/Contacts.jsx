@@ -29,14 +29,15 @@ function Contacts(){
    
 
     if(error){
-        <p>{error}</p>
+        return(<p>{error}</p>)
     }
 
     if(loading){
-        <p>loading...</p>
+        return(<p>loading...</p>)
+        
     }
 
-  
+ 
 
  const contactData = contacts.map((item, index) =>{
         return(
@@ -46,6 +47,13 @@ function Contacts(){
             </div>
         )
     })
+
+       if(!contactData){
+        return (
+            <p>no contacts to this play</p>
+        )
+    }
+  
 
     return(
         <div className='Contacts'>
