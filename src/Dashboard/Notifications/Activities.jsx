@@ -40,11 +40,11 @@ function Activities(){
     })
 
     if(error){
-        <p>{error}</p>
+        return <p className='error'>{error}</p>
     }
 
     if(loading){
-        <p>loading...</p>
+        return <p>loading...</p>
     }
 
     if(!activityData){
