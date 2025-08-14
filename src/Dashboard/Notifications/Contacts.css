@@ -1,0 +1,16 @@
+.Contacts h3{
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+.contactData{
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+.contactData img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}

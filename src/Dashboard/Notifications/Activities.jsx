@@ -14,7 +14,7 @@ function Activities(){
         const fetchActivities = async () => {
             try {
                 const responces = await axios.get('https://dashboard-backend-rv0c.onrender.com/api/activities')
-                 console.log(responces.data)
+               //  console.log(responces.data)
                  setActivities(responces.data)
             } catch (error) {
                 console.error(error)
