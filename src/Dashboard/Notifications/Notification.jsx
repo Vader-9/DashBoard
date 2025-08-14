@@ -21,9 +21,9 @@ function Notification() {
 
         } catch (error) {
             console.error(error)
-            setError(error)
+            setError('unable to get notifications')
         } finally {
-           //  setLoading(false)
+             setLoading(false)
         }
         
 
@@ -34,7 +34,7 @@ function Notification() {
     }, [])
 
     if(error){
-        <p>{error}</p>
+        <p>unable to get notifications</p>
     }
 
     if(loading){
