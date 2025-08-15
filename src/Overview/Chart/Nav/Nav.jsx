@@ -8,16 +8,16 @@ function Nav(){
         <div className="first-Nav">
             <AppWindow/>
             <Star />
-             <a href="page1">Dashboard</a>
+            <a href="page2">Dashboard</a>
             <p>/</p>
-             <a href="page2">Default</a>
+             <a href="page1">Default</a>
         </div>
         <div className="second-Nav">
             <input type="text" placeholder='Search' />
             <Sun />
             <History />
             <Bell />
-            <AppWindow/>
+            
         </div>
     </div>)
 }
