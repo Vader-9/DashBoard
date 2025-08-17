@@ -18,7 +18,7 @@ function App() {
        <div id='app'>
       <Nav />
          <Routes>
-          <Route path="/page1" element={<Default />} />
+          <Route path="/" element={<Default />} />
           <Route path="/page2" element={<Overview />} />
          </Routes>
       </div>

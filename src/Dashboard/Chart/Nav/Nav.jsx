@@ -1,6 +1,6 @@
 import './Nav.css'
 import { AppWindow, Star, Sun, History, Bell } from 'lucide-react'
-//import { Link } from 'react-router-dom'   // <-- import Link
+import { Link } from 'react-router-dom'   // <-- import Link
 import { useState } from 'react'
  
 
@@ -13,9 +13,9 @@ function Nav({setPage1}) {
       <div className="first-Nav">
         <AppWindow />
         <Star />
-        <a href='page2'  >Dashboard</a>   {/* ✅ use Link */}
+        <Link to ='/page2'  >Dashboard</Link>   {/* ✅ use Link */}
         <p>/</p>
-        <a href='/page1' >Default</a>     {/* ✅ use Link */}
+        <Link to ='/page1' >Default</Link>     {/* ✅ use Link */}
       </div>
 
       <div className="second-Nav">
