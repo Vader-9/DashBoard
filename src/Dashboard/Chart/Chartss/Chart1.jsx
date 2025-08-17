@@ -15,7 +15,7 @@ function Chart1() {
         const fetchViews = async () => {
             try {
                 const response = await axios.get('https://dashboard-backend-rv0c.onrender.com/api/overviews')
-               // console.log(response.data);
+                console.log(response.data);
                 setViews(response.data);
 
             } catch (error) {

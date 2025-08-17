@@ -7,7 +7,7 @@ import Chart from "./Chart/Chart";
 function Overview() {
   return (
     <div className="overview">
-        <Sidebar/>
+      
        <Chart/>
     </div>
   );

@@ -1,16 +1,16 @@
 import './Nav.css'
 import { AppWindow, Star, Sun, History, Bell } from 'lucide-react'
 
-function Nav(){
+function Nav({setPage1}){
 
     return(
     <div className="Nav">
         <div className="first-Nav">
             <AppWindow/>
             <Star />
-            <a href="page2">Dashboard</a>
+            <p >Dashboard</p>
             <p>/</p>
-             <a href="page1">Default</a>
+             <span>Default</span>
         </div>
         <div className="second-Nav">
             <input type="text" placeholder='Search' />

@@ -1,21 +1,31 @@
+import { useState } from 'react';
 import Default from './Dashboard/Default'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Overview from './Overview/Overview';
-// <nav>
-//   <Link to="/page1">Default</Link> | <Link to="/page2">Overview</Link>
-//  </nav>
+import Nav from './Dashboard/Chart/Nav/Nav';
+
+import Sidebar from './Sidebar/Sidebar';
+
 
 function App() {
 
+
+
   return (
-    <BrowserRouter>
-      <div id="app">
-        <Routes>
+  <BrowserRouter>
+   <div className='App'>
+      <Sidebar />
+       <div id='app'>
+      <Nav />
+         <Routes>
           <Route path="/page1" element={<Default />} />
           <Route path="/page2" element={<Overview />} />
-        </Routes>
+         </Routes>
       </div>
-    </BrowserRouter>
+    </div>
+   
+  </BrowserRouter>
+   
 
   )
 }

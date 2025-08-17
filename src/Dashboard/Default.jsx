@@ -7,7 +7,7 @@ function Default(){
 
     return(
     <div className='Default'>
-    <Sidebar/>
+
      <Chart/>
      <Notifications/>
     </div>)

@@ -35,19 +35,17 @@ function TrafficbyWebsite() {
 
 
 
-//console.log(traffic)
+console.log(traffic)
  
 
   const series = [
     {
       name: 'Last Year',
-      data: traffic.map((item) => {
-        return item.website
-      })
+      data: traffic.map((item) =>item.percentage)
     },
-  
+ 
   ];
-
+  console.log(series[0].data)
   const options = {
     chart: {
       height: 350,
@@ -60,12 +58,7 @@ function TrafficbyWebsite() {
     stroke: {
       curve: 'smooth'
     },
-    xaxis: {
-      // type: 'datetime',
-      categories:  traffic.map((item) => {
-        return item.percentage
-      })
-    },
+   
     tooltip: {
       x: {
         format: 'dd/MM/yy HH:mm'

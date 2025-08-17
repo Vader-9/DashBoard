@@ -14,7 +14,7 @@ function Contacts(){
         const fetchContacts = async () => {
             try {
                 const responces = await axios.get('https://dashboard-backend-rv0c.onrender.com/api/contacts')
-                 console.log(responces.data)
+              //   console.log(responces.data)
                  setContacts(responces.data)
             } catch (error) {
                 console.error(error)

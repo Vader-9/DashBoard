@@ -4,8 +4,10 @@ import Charts from "./Chartss/Charts"
 
 function Chart(){
 
+   
+
     return<div className="Chart">
-         <Nav/>
+        
          <Charts/>
     </div>
 }

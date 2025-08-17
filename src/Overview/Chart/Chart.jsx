@@ -5,7 +5,7 @@ import Charts from "./Chartss/Charts"
 function Chart(){
 
     return<div className="Charts">
-         <Nav/>
+         
          <Charts/>
     </div>
 }

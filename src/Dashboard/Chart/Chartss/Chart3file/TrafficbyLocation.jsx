@@ -16,7 +16,7 @@ function TrafficbyLocation() {
       try {
 
         const responce = await axios.get(' https://dashboard-backend-rv0c.onrender.com/api/traffic')
-       //  console.log(responce.data.byLocation)
+      //  console.log(responce.data.byLocation)
           setLocation(responce.data.byLocation)
 
           
@@ -37,44 +37,39 @@ function TrafficbyLocation() {
   if (error) return <p>{error}</p>;
   if (!location) return <p>No chart data available.</p>;
 
-  const series = [
-    {
-      name: 'Last Year',
-      // data: trafficBySocials
-    },
-    {
-      name: 'This Year',
-      // data: trafficByPercentage
-    }
-  ];
+  const countryData = location.map((item)=>item.country)
+  const yData = location.map((item)=>item.percentage)
+
+  //console.log(yData)
+
+   const series = yData; // ✅ array only
 
   const options = {
-    chart: {
-      height: 350,
-      type: 'area',
-      width: '100%'
-    },
+    labels: countryData, // ✅ match length with series
     dataLabels: {
-      enabled: false
+      enabled: true,
+      formatter: function (val) {
+        return val.toFixed(1) + "%"; // ✅ format percentage
+      },
+      dropShadow: {
+        enabled: true,
+        top: 1,
+        left: 1,
+        blur: 1,
+        opacity: 0.5,
+      },
     },
-    stroke: {
-      curve: 'smooth'
-    },
-    xaxis: {
-      // type: 'datetime',
-      // categories: labels
-    },
-    tooltip: {
-      x: {
-        format: 'dd/MM/yy HH:mm'
-      }
-    }
   };
 
   return (
     <div className="TrafficbyLocation">
       <h2>Traffic by Location</h2>
-      <ReactApexChart options={options} series={series} type="pie" height={350} />
+      <ReactApexChart
+        options={options}
+        series={series}
+        type="donut"
+        height={350}
+      />
     </div>
   )
 }

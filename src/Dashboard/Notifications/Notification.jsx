@@ -58,7 +58,7 @@ function Notification() {
       
     }
 
-  // console.log(notification)
+  console.log(notification)
 
   
    
