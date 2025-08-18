@@ -15,7 +15,7 @@ function Nav({setPage1}) {
         <Star />
         <Link to ='/page2'  >Dashboard</Link>   {/* ✅ use Link */}
         <p>/</p>
-        <Link to ='/page1' >Default</Link>     {/* ✅ use Link */}
+        <Link to ='/' >Default</Link>     {/* ✅ use Link */}
       </div>
 
       <div className="second-Nav">
