@@ -1,7 +1,7 @@
 import './Sidebar.css'
 import { CircleUserRound } from 'lucide-react'
 import Favourites from './Favourites/Favourites'
-import Dash from './dash/dash'
+import Dash from './Dash/Dash'
 import Page from './Pages/Pages'
 import Social from './Pages/Socials/Social'
 
